@@ -1,0 +1,59 @@
+<br><br>
+
+<!-- <button (click)="newMessage()"> Click</button> -->
+<table style="margin-left: 16%;">
+    <h3 class="text-center">Soil Sample Data List</h3>
+    <br>
+    <div class="container-fluid">
+        <table class="table table-striped table-bordered">
+            <tr class="bg alert-danger">
+                <th>ID</th>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Phosphorus(P)</th>
+                <th>Sulfur(S)</th>
+                <th>Zinc(Zn)</th>
+                <th>Iron(Fe)</th>
+                <th>Manganese(Mn)</th>
+                <th>Copper(Cu)</th>
+                <th>Potassium(K)</th>
+                <th>Calcium(Ca)</th>
+                <th>Magnesium(Mg)</th>
+                <th>Sodium(Na)</th>
+                <th>Organic Matter(%)</th>
+                <th>CEC</th>
+                <th>pH</th>
+                
+                <th style="text-align: center;">Action</th>
+            </tr>
+            <tr *ngFor="let test3 of sampleList">
+                <td>{{ test3.id4 }}</td>
+                <td>{{ test3.inputDate }}</td>
+                <td>{{ test3.inputDay }}</td>
+                <td>{{ test3.inputTime }}</td>
+                <td>{{ test3.inputLocation }}</td>
+                <td>{{ test3.inputP }}</td>
+                <td>{{ test3.inputS }}</td>
+                <td>{{test3.inputZn}}</td>
+                <td>{{test3.inputFe}}</td>
+                <td>{{test3.inputMn}}</td>
+                <td>{{test3.inputCu}}</td>
+                <td>{{test3.inputK}}</td>
+                <td>{{test3.inputCa}}</td>
+                <td>{{test3.inputMg}}</td>
+                <td>{{test3.inputNa}}</td>
+                <td>{{test3.inputOM}}</td>
+                <td>{{test3.inputCEC}}</td>
+                <td>{{test3.inputpH}}</td>
+
+                <td>
+                    <a type="button" [routerLink]="['/edit4/',test3.id4]" class="btn btn alert-primary">Edit</a>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger" (click)="delete(test3.id4)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br><br>

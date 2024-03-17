@@ -1,0 +1,181 @@
+<br><br>
+<form class="container" style="margin-left: 20%;" [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+    <h3 class="text-center">Water Sample Form</h3>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDate">Date:</label>
+                <input type="date" formControlName="inputDate" class="form-control" id="inputDate">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDay">Day:</label>
+                <input type="text" formControlName="inputDay" class="form-control" id="inputDay">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTime">Time:</label>
+                <input type="time" formControlName="inputTime" class="form-control" id="inputTime">
+            </div>
+        </div>
+        <div class="form-group col">      
+            <label for="inputLocation">Location:</label>
+            <select id="inputLocation" class="form-control" formControlName="inputLocation">
+                <option selected>Choose...</option>
+                <option>Dhaka</option>
+                <option>Chittagong</option>
+                <option>Rajshahi</option>
+                <option>Khulna</option>
+                <option>Barishal</option>
+                <option>Dinajpur</option>
+                <option>Mymensingh</option>
+                <option>Sylhet</option>
+                <option>Cumillah</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTurbidity">Turbidity(NTU):</label>
+                <input type="text" formControlName="inputTurbidity" class="form-control" id="inputTurbidity">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTemperature">Temperature(C):</label>
+                <input type="text" formControlName="inputTemperature" class="form-control" id="inputTemperature">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputColour">Colour:</label>
+                <input type="text" formControlName="inputColour" class="form-control" id="inputColour">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTasteAndOdour">Taste and Odour:</label>
+                <input type="text" formControlName="inputTasteAndOdour" class="form-control" id="inputTasteAndOdour">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputSolids">Solids(TDS):</label>
+                <input type="text" formControlName="inputSolids" class="form-control" id="inputSolids">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputEC">EC:</label>
+                <input type="text" formControlName="inputEC" class="form-control" id="inputEC">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputpH">pH:</label>
+                <input type="text" formControlName="inputpH" class="form-control" id="inputpH">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputChloride">Chloride(Cl-):</label>
+                <input type="text" formControlName="inputChloride" class="form-control" id="inputChloride">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputChlorine">Chlorine(Cl2):</label>
+                <input type="text" formControlName="inputChlorine" class="form-control" id="inputChlorine">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputSulphate">Sulphate(SO2-4):</label>
+                <input type="text" formControlName="inputSulphate" class="form-control" id="inputSulphate">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputNitrogen">Nitrogen(N):</label>
+                <input type="text" formControlName="inputNitrogen" class="form-control" id="inputNitrogen">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputFluoride">Fluoride(F-):</label>
+                <input type="text" formControlName="inputFluoride" class="form-control" id="inputFluoride">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputFe_Mn">(Fe)(Mn):</label>
+                <input type="text" formControlName="inputFe_Mn" class="form-control" id="inputFe_Mn">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputCu_Zn">(Cu)(Zn):</label>
+                <input type="text" formControlName="inputCu_Zn" class="form-control" id="inputCu_Zn">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputHardness">Hardness:</label>
+                <input type="text" formControlName="inputHardness" class="form-control" id="inputHardness">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDO">Dissolved Oxygen(DO):</label>
+                <input type="text" formControlName="inputDO" class="form-control" id="inputDO">
+            </div>
+        </div>
+    </div>
+        
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputBOD">Biological Oxygen Demand(BOD):</label>
+                <input type="text" formControlName="inputBOD" class="form-control" id="inputBOD">
+            </div>
+        </div>
+        
+
+    </div>
+
+    <div class="form-row">
+        <div class="col-auto my-1"><br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</form>
+<br><br>

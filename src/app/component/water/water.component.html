@@ -1,0 +1,360 @@
+<br><br>
+<div class="container"  style="margin-left: 20%;">
+<div class="container">
+    <h3 class="text-center">Water Sampling</h3>
+    <br>
+    <h5>Why do we need to sample the water?</h5>
+    <br>
+    <p>We provide water sampling services for a wide variety of water systems including domestic, commercial and
+        industrial systems.
+        From straight forward drinking water sampling and inspection, to detailed chemical analysis of process water
+        systems, Aqua Legion are ready to deliver a supportive service that will allow you to make informed decisions
+        about your water supply or water system.
+        There is a difference between “Water Testing” and “Water Sampling”. Water Testing is the process used for
+        analysing the constituents or microbial content of the water. “Water Sampling” is the action of sample
+        collection and transportation. It should be highlighted that they are not the same and there are clear and
+        separate British Standards for both.</p>
+</div>
+<br><br>
+<!-- <div class="column">
+  <div class="card">
+      <h4>Line Chart</h4>
+      <i class="fa-solid fa-chart-line-up"></i>
+  </div>
+</div>
+
+
+<div class="column">
+  <div class="card">
+      <h4>Column Chart</h4>
+      <i class="fa-solid fa-chart-column"></i>
+  </div>
+</div>
+
+
+<div class="column">
+  <div class="card">
+      <h4>Pie Chart</h4>
+      <i class="fa-duotone fa-chart-pie"></i>
+  </div>
+</div>
+<br><br> -->
+
+
+
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<div style="margin-left: 4%;">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+          <div class="panel">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col col-sm-3 col-xs-12">
+                          <h4 class="title">Data <span>List</span></h4>
+                      </div>
+                      <div class="col-sm-9 col-xs-12 text-right">
+                          <div class="btn_group">
+                            <input type="date" class="form-control" [(ngModel)]="startDate" placeholder="Start Date">
+                            <input type="date" class="form-control" [(ngModel)]="endDate" placeholder="End Date">
+                            <button class="btn btn-default" ><i class="fa fa-sync-alt" (click)="search()">Search</i></button>
+                            <button class="btn btn-default" title="Pdf" onclick="window.print()"><i class="fa fa-file-pdf">PDF</i></button>
+                            <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel">Excel</i></button>
+                          </div>
+                          <div class="btn_group">
+                            {{startDate}}-{{endDate}}
+                           </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              
+                              <th>Location</th>
+                              <th>Turbidity(NTU)</th>
+                              <th>Temperature(C)</th>
+                              <th>Colour</th>
+                              <th>Taste and Odour</th>
+                              <th>Solids(TDS)</th>
+                              <th>EC</th>
+                              <th>pH</th>
+                              <th>Chloride(Cl-)</th>
+                              <th>Chlorine(Cl2)</th>
+                              <th>Sulphate(SO2-4)</th>
+                              <th>Nitrogen(N)</th>
+                              <th>Fluoride(F-)</th>
+                              <th>(Fe)(Mn)</th>
+                              <th>(Cu)(Zn)</th>
+                              <th>Hardness</th>
+                              <th>Dissolved Oxygen(DO)</th>
+                              <th>Biological Oxygen Demand(BOD)</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let val of waterDashboardDataList">
+
+                            <td>{{val.inputLocation}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputTurbidity>5 ? 'red': '' }">{{val.inputTurbidity}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputTemperature>=10 &&  val.inputTemperature<=15? '': 'red' }">{{val.inputTemperature}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputColour>0 ? 'red': '' }">{{val.inputColour}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputTasteAndOdour =='A' ? 'red': '' }">{{val.inputTasteAndOdour}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputSolids <1500 ? '': 'red' }">{{val.inputSolids}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputEC <0.005 || val.inputEC >0.05 ? 'red': '' }">{{val.inputEC}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputpH <6.5 || val.inputpH >8.5 ? 'red': '' }">{{val.inputpH}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputChloride <250 ? '': 'red' }">{{val.inputChloride}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputChlorine <0.2 || val.inputChlorine >0.2 ? 'red': '' }">{{val.inputChlorine}}</td>
+                            <td>{{val.inputSulphate}}</td>
+                            <td>{{val.inputNitrogen}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputFluoride <1.4 || val.inputFluoride >1.4 ? 'red': '' }">{{val.inputFluoride}}</td>
+                            <td>{{val.inputFe_Mn}}</td>
+                            <td>{{val.inputCu_Zn}}</td>
+                            <td [ngStyle]="{ 'background-color': val.inputHardness <=500 ? '': 'red' }">{{val.inputHardness}}</td>
+                            <td>{{val.inputDO}}</td>
+                            <td>{{val.inputBOD}}</td>          
+                            <td>
+                                  <ul class="action-list">
+                                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                  </ul>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div class="panel-footer">
+                  <div class="row">
+                      <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                      <div class="col-sm-6 col-xs-6">
+                          <ul class="pagination hidden-xs pull-right">
+                              <li><a href="#"><</a></li>
+                              <li class="active"><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li><a href="#">></a></li>
+                          </ul>
+                          <ul class="pagination visible-xs pull-right">
+                              <li><a href="#"><</a></li>
+                              <li><a href="#">></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<br><br>
+
+<div class="container d-inline-flex" style="margin-left: 20%;">
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th>Turbidity(NTU)</th>
+      <th>Temperature(C)</th>
+      <th>Colour</th>
+      <th>Taste and Odour</th>
+      <th>Solids(TDS)</th>
+      <th>EC</th>
+      <th>pH</th>
+      <th>Chloride(Cl-)</th>
+      <th>Chlorine(Cl2)</th>
+      <th>Sulphate(SO2-4)</th>
+      <th>Nitrogen(N)</th>
+      <th>Fluoride(F-)</th>
+      <th>(Fe)(Mn)</th>
+      <th>(Cu)(Zn)</th>
+      <th>Hardness</th>
+      <th>Dissolved Oxygen(DO)</th>
+      <th>Biological Oxygen Demand(BOD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><5</td>
+      <td>10C-15C</td>
+      <td>0</td>
+      <td>B</td>
+      <td><(1500 mg/L)</td>
+      <td>0.005-0.05 S/m</td>
+      <td>6.5-8.5</td>
+      <td><(250 mg/L)</td>
+      <td>0.2 mg/L</td>
+      <td>Harmless</td>
+      <td></td>
+      <td>1.4 mg/L</td>
+      <td>Harmless</td>
+      <td>Harmless</td>
+      <td><=500 mg/L</td>
+      <td>Harmless</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br><br>
+
+
+  <!-- <main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Album example</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main> -->
+    

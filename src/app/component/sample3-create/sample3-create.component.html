@@ -1,0 +1,151 @@
+<br><br>
+<form class="container" style="margin-left: 20%;" [formGroup]="sampleForm3" (ngSubmit)="onSubmit()">
+    <h3 class="text-center">Soil Sample Form</h3>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDate">Date:</label>
+                <input type="date" formControlName="inputDate" class="form-control" id="inputDate">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDay">Day:</label>
+                <input type="text" formControlName="inputDay" class="form-control" id="inputDay">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTime">Time:</label>
+                <input type="time" formControlName="inputTime" class="form-control" id="inputTime">
+            </div>
+        </div>
+        <div class="form-group col">      
+            <label for="inputLocation">Location:</label>
+            <select id="inputLocation" class="form-control" formControlName="inputLocation">
+                <option selected>Choose...</option>
+                <option>Dhaka</option>
+                <option>Chittagong</option>
+                <option>Rajshahi</option>
+                <option>Khulna</option>
+                <option>Barishal</option>
+                <option>Dinajpur</option>
+                <option>Mymensingh</option>
+                <option>Sylhet</option>
+                <option>Cumillah</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputP">Phosphorus(P):</label>
+                <input type="text" formControlName="inputP" class="form-control" id="inputP">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputS">Sulfur(S):</label>
+                <input type="text" formControlName="inputS" class="form-control" id="inputS">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputZn">Zinc(Zn):</label>
+                <input type="text" formControlName="inputZn" class="form-control" id="inputZn">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputFe">Iron(Fe):</label>
+                <input type="text" formControlName="inputFe" class="form-control" id="inputFe">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputMn">Manganese(Mn):</label>
+                <input type="text" formControlName="inputMn" class="form-control" id="inputMn">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputCu">Copper(Cu):</label>
+                <input type="text" formControlName="inputCu" class="form-control" id="inputCu">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputK">Potassium(K):</label>
+                <input type="text" formControlName="inputK" class="form-control" id="inputK">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputCa">Calcium(Ca):</label>
+                <input type="text" formControlName="inputCa" class="form-control" id="inputCa">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputMg">Magnesium(Mg):</label>
+                <input type="text" formControlName="inputMg" class="form-control" id="inputMg">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputNa">Sodium(Na):</label>
+                <input type="text" formControlName="inputNa" class="form-control" id="inputNa">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputOM">Organic Matter(%):</label>
+                <input type="text" formControlName="inputOM" class="form-control" id="inputOM">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputCEC">CEC:</label>
+                <input type="text" formControlName="inputCEC" class="form-control" id="inputCEC">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputpH">pH:</label>
+                <input type="text" formControlName="inputpH" class="form-control" id="inputpH">
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <div class="form-row">
+        <div class="col-auto my-1"><br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</form>
+<br><br>

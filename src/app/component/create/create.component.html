@@ -1,0 +1,128 @@
+<br><br>
+
+<form  class="container" style="margin-left: 20%;" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <h3 class="text-center">Staff Form</h3>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputFname">First Name</label>
+            <input type="text" formControlName="inputFname" class="form-control" id="inputFname" placeholder="First name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputLname">Last Name</label>
+            <input type="text" formControlName="inputLname" class="form-control" id="inputLname" placeholder="Last name">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" formControlName="inputEmail" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" formControlName="inputPassword" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" formControlName="inputAddress" class="form-control" id="inputAddress">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input type="text" formControlName="inputAddress2" class="form-control" id="inputAddress2">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" formControlName="inputCity" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>Asia</option>
+                <option>America</option>
+                <option>Europe</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" formControlName="inputZip" class="form-control" id="inputZip">
+        </div>
+    </div>
+    
+
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Specialization</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="radioCheck" name="radioCheck"  value="option1"
+                        checked>
+                    <label class="form-check-label" for="gridRadios1">
+                        Biodiversity Specialist
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="radioCheck" name="radioCheck"  value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                        Forestry Manager
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" formControlName="radioCheck" name="radioCheck"  value="option3"
+                        >
+                    <label class="form-check-label" for="gridRadios3">
+                        Waste Management Engineer
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group row">
+        <div class="col-sm-2">Education</div>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <input class="form-check-input" forControlName="gridCheck" type="checkbox"  value="PhD" (click)="doAction($event)" id="gridCheck1">
+                <label class="form-check-label" for="gridCheck1">
+                    PhD
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" forControlName="gridCheck" type="checkbox" value="Masters" (click)="doAction($event)" id="gridCheck2">
+                <label class="form-check-label" for="gridCheck2">
+                    Masters
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" forControlName="gridCheck" type="checkbox" value="Honors" (click)="doAction($event)" id="gridCheck3">
+                <label class="form-check-label" for="gridCheck3">
+                    Honers
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+            <label for="inputState">Programming Language</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option selected>Choose...</option>
+                <option value="1">Java</option>
+                <option value="2">.Net</option>
+                <option value="3">PHP</option>
+            </select>
+        </div>
+        
+        <div class="col-auto my-1"><br>
+            <div class="custom-control custom-checkbox mr-sm-2">
+                <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+            </div>
+        </div>
+        <div class="col-auto my-1"><br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</form>
+<br><br>

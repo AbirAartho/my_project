@@ -1,0 +1,74 @@
+<nav class="fixed-top bg alert alert-success navbar navbar-expand-lg navbar-light">
+    <div class="side-nav-button p-2 me-3 text-light">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <a class="navbar-brand" href="#">EnvCare &nbsp; |</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/list" href="#">StaffDataList</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add" href="#">StaffForm</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/list2" href="#">WaterDataList</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/add2" href="#">WaterForm</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/list3" href="#">AirDataList</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/add3" href="#">AirForm</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/list4" href="#">SoilDataList</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/add4" href="#">SoilForm</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/qa" href="#">QA</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="/qalist" href="#">QAList</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">sharedMessage</a>
+        </li> -->
+
+        <li class="nav-item" *ngIf="userRole=='admin'">
+          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Dashboard</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="userRole=='admin'">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        <a class=" my-2 my-sm-0" >{{username | uppercase }}</a> &nbsp;&nbsp;
+        <button class="btn btn-warning my-2 my-sm-0" type="button" (click)="logOut()">Logout</button>
+      </form>
+    </div>
+  </nav>
+  
+  <br>
+  <br>

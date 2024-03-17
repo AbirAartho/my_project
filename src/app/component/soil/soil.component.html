@@ -1,0 +1,170 @@
+<br><br>
+<div class="container" style="margin-left: 20%;">
+<h3 class="text-center">Soil Sampling</h3>
+<br>
+<h5>Why do we need to sample the soil?</h5>
+<br>
+<p>Soil sampling is the process of taking a small sample of soil, 
+    which is then sent to a lab to determine the nutrient content. 
+    The soil can also be tested for the chemical, physical and 
+    biological properties, which are critical to plant nutrition. 
+    Basic plant nutrition requires the presence of nutrients such as 
+    nitrogen, phosphorus and potassium – soil sampling can also 
+    determine the pH levels of the soil alongside humus content, 
+    available lime, complete sulphur content and total CaCO3.
+    The analysis of the soil is carried out by taking samples of the 
+    soil and performing laboratory tests, which is then followed by an 
+    interpretation of the results. Further recommendations for 
+    fertiliser and soil preservation can then be provided.</p>
+
+</div>
+<br><br>
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<div style="margin-left: 25%;">
+  <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+          <div class="panel">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col col-sm-3 col-xs-12">
+                          <h4 class="title">Data <span>List</span></h4>
+                      </div>
+                      <div class="col-sm-9 col-xs-12 text-right">
+                          <div class="btn_group">
+                              <input type="date" class="form-control" [(ngModel)]="startDate" placeholder="Start Date">
+                              <input type="date" class="form-control" [(ngModel)]="endDate" placeholder="End Date">
+                              <button class="btn btn-default" ><i class="fa fa-sync-alt" (click)="search()">Search</i></button>
+                              <button class="btn btn-default" title="Pdf" onclick="window.print()"><i class="fa fa-file-pdf">PDF</i></button>
+                              <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel">Excel</i></button>
+                          </div>
+                          <div class="btn_group">
+                           {{startDate}}-{{endDate}}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+
+                              <th>Location</th>
+                              <th>Phosphorus(P)</th>
+                              <th>Sulfur(S)</th>
+                              <th>Zinc(Zn)</th>
+                              <th>Iron(Fe)</th>
+                              <th>Manganese(Mn)</th>
+                              <th>Copper(Cu)</th>
+                              <th>Potassium(K)</th>
+                              <th>Calcium(Ca)</th>
+                              <th>Magnesium(Mg)</th>
+                              <th>Sodium(Na)</th>
+                              <th>Organic Matter(%)</th>
+                              <th>CEC</th>
+                              <th>pH</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let val of soilDashboardDataList">
+
+                              <td>{{val.inputLocation}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputP <25 || val.inputP >35 ? 'red': '' }">{{val.inputP}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputS <7 || val.inputS >15 ? 'red': '' }">{{val.inputS}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputZn <1 || val.inputZn >3 ? 'red': '' }">{{val.inputZn}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputFe <10 || val.inputFe >20 ? 'red': '' }">{{val.inputFe}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputMn <8 || val.inputMn >11 ? 'red': '' }">{{val.inputMn}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputCu <0.8 || val.inputCu >1 ? 'red': '' }">{{val.inputCu}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputK <165 || val.inputK >220 ? 'red': '' }">{{val.inputK}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputCa <14000 ? 'red': '' }">{{val.inputCa}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputMg <100 ? 'red': '' }">{{val.inputMg}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputNa <80 || val.inputNa >120 ? 'red': '' }">{{val.inputNa}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputOM <2.5 ? 'red': '' }">{{val.inputOM}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputCEC <13 || val.inputCEC >25 ? 'red': '' }">{{val.inputCEC}}</td>
+                              <td [ngStyle]="{ 'background-color': val.inputpH <7 || val.inputpH >7 ? 'red': '' }">{{val.inputpH}}</td>
+                              <td>
+                                  <ul class="action-list">
+                                      <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                      <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                  </ul>
+                              </td>
+                          </tr>
+                          
+                      </tbody>
+                  </table>
+              </div>
+              <div class="panel-footer">
+                  <div class="row">
+                      <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                      <div class="col-sm-6 col-xs-6">
+                          <ul class="pagination hidden-xs pull-right">
+                              <li><a href="#"></a></li>
+                              <li class="active"><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li><a href="#">></a></li>
+                          </ul>
+                          <ul class="pagination visible-xs pull-right">
+                              <li><a href="#"></a></li>
+                              <li><a href="#">></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<br><br>
+
+
+<div style="margin-left: 20%;"> 
+  <table class="table table-bordered table-dark">   
+    <thead>
+      <h4 class="title">Standard <span>Value</span></h4>
+      <tr>
+        <th>Phosphorus(P)</th>
+        <th>Sulfur(S)</th>
+        <th>Zinc(Zn)</th>
+        <th>Iron(Fe)</th>
+        <th>Manganese(Mn)</th>
+        <th>Copper(Cu)</th>
+        <th>Potassium(K)</th>
+        <th>Calcium(Ca)</th>
+        <th>Magnesium(Mg)</th>
+        <th>Sodium(Na)</th>
+        <th>Organic Matter(%)</th>
+        <th>CEC</th>
+        <th>pH</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>25-35</td>
+        <td>7-15</td>
+        <td>1-3</td>
+        <td>8-11</td>
+        <td>0.8-1</td>
+        <td>165-220</td>
+        <td>14000 or Higher</td>
+        <td>100 or Higher</td>
+        <td>80-120</td>
+        <td>2.5% or Higher</td>
+        <td>13-25</td>
+        <td>10-20</td>
+        <td>7</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<div style="margin-left: 25%;" class="container">
+  <h3>Dhaka</h3>
+  <div class="chart-container">
+      <canvas  id="MyChart" >{{ chart }}</canvas>
+  </div>
+</div>
+
+<br><br>

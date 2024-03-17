@@ -1,0 +1,106 @@
+<br><br>
+<form class="container" style="margin-left: 20%;" [formGroup]="sampleForm2" (ngSubmit)="onSubmit()">
+    <h3 class="text-center">Air Sample Edit Form</h3>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDate">Date:</label>
+                <input type="date" formControlName="inputDate" class="form-control" id="inputDate">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputDay">Day:</label>
+                <input type="text" formControlName="inputDay" class="form-control" id="inputDay">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTime">Time:</label>
+                <input type="time" formControlName="inputTime" class="form-control" id="inputTime">
+            </div>
+        </div>
+        <div class="form-group col">      
+            <label for="inputLocation">Location:</label>
+            <select id="inputLocation" class="form-control" formControlName="inputLocation">
+                <option selected>Choose...</option>
+                <option>Dhaka</option>
+                <option>Chittagong</option>
+                <option>Rajshahi</option>
+                <option>Khulna</option>
+                <option>Barishal</option>
+                <option>Dinajpur</option>
+                <option>Mymensingh</option>
+                <option>Sylhet</option>
+                <option>Cumillah</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputCO₂">Carbon Dioxide(CO₂):</label>
+                <input type="text" formControlName="inputCO₂" class="form-control" id="inputCO₂">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputTemperature">Temperature(C):</label>
+                <input type="text" formControlName="inputTemperature" class="form-control" id="inputTemperature">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputHumidity">Humidity:</label>
+                <input type="text" formControlName="inputHumidity" class="form-control" id="inputHumidity">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputSO₂">Sulfur Dioxide(SO₂):</label>
+                <input type="text" formControlName="inputSO₂" class="form-control" id="inputSO₂">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputNOx">Nitrogen Oxides(NOx):</label>
+                <input type="text" formControlName="inputNOx" class="form-control" id="inputNOx">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="inputPM">Particulate Matter(PM):</label>
+                <input type="text" formControlName="inputPM" class="form-control" id="inputPM">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label for="inputAirVelocity">Air Velocity:</label>
+                <input type="text" formControlName="inputAirVelocity" class="form-control" id="inputAirVelocity">
+            </div>
+        </div>
+        
+
+    </div>
+
+    <div class="form-row">
+        <div class="col-auto my-1"><br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</form>
+<br><br>

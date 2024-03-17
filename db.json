@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": "d917",
+      "inputEmail": "ruma@yahoo.com",
+      "inputPassword": "321",
+      "inputAddress": "Dhaka",
+      "inputAddress2": "Khulna",
+      "inputCity": "Dhaka",
+      "inputZip": "1205",
+      "gridCheck": "MastersHonors",
+      "radioCheck": "option3",
+      "inputLname": "Aktar",
+      "inputFname": "Ruma"
+    },
+    {
+      "id": "632d",
+      "inputEmail": "nazmul@gmail.com",
+      "inputPassword": "147",
+      "inputAddress": "Dhaka",
+      "inputAddress2": "Khulna",
+      "inputCity": "Dhaka",
+      "inputZip": "1205",
+      "gridCheck": "Masters",
+      "radioCheck": "option2",
+      "inputLname": "Hasan",
+      "inputFname": "Nazmul"
+    }
+  ],
+  "auth": [
+    {
+      "id": "ba17",
+      "inputEmail": "sal@yahoo.com",
+      "inputPassword": "123",
+      "inputAddress": "rytytry",
+      "inputAddress2": "srtystry",
+      "inputCity": "dsfsdgsdf",
+      "inputZip": "cfhydfsh",
+      "gridCheck": "",
+      "radioCheck": "option2",
+      "inputLname": "ccc",
+      "inputFname": "bbb"
+    }   
+  ]
+}

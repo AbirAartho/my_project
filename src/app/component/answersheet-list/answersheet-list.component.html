@@ -1,0 +1,26 @@
+<br><br>
+
+<table style="margin-left: 16%;">
+    <h3 style="margin-left: 50%;">Answer Sheet</h3>
+    <br>
+    <div class="container-fluid">
+        <table class="table table-striped">
+            <tr class="bg alert-warning">
+                <th style="text-align: center;">Action</th>
+
+                <th>ID</th>
+                <th>Question 1</th>
+                <th>Question 2</th>
+                <th>Question 3</th>
+            </tr>
+            <tr *ngFor="let qa of qalist">
+                <td>
+                    <a type="button" [routerLink]="['/qaedit/',qa.id]" class="btn btn alert-primary">Edit</a>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger" (click)="delete(qa.id)">Delete</button>
+                </td>
+                <td>{{ qa.id }}</td>
+            </tr>
+        </table>
+    </div>
+</table>
